@@ -77,18 +77,18 @@ pandas, numpy, matplotlib, statsmodels, sklearn.metrics
 - Example: SARIMA(1,1,1)(1,1,1,12) → captures yearly seasonality (m=12 months)
 ```
 
-#### 6. Parameter Summary
-```
-| Parameter | Meaning |
-|-----------|--------|
-| p         | AR lags (previous values) |
-| d         | Differencing (to remove trend) |
-| q         | MA lags (previous errors) |
-| P         | Seasonal AR lags |
-| D         | Seasonal differencing |
-| Q         | Seasonal MA lags |
-| m         | Seasonal period (e.g., 12 months) |
-```
+#### Parameters
+
+| Parameter | Meaning                           |
+| :-------: | :-------------------------------- |
+|   **p**   | AR lags (previous values)         |
+|   **d**   | Differencing (to remove trend)    |
+|   **q**   | MA lags (previous errors)         |
+|   **P**   | Seasonal AR lags                  |
+|   **D**   | Seasonal differencing             |
+|   **Q**   | Seasonal MA lags                  |
+|   **m**   | Seasonal period (e.g., 12 months) |
+
 
 #### 7. How to Choose
 ```
@@ -100,18 +100,7 @@ pandas, numpy, matplotlib, statsmodels, sklearn.metrics
 
 ---
 
-### Mathematics
-```
-AR:       Y_t = c + φ1*Y_{t-1} + ... + φp*Y_{t-p} + ε_t
-MA:       Y_t = μ + ε_t + θ1*ε_{t-1} + ... + θq*ε_{t-q}
-ARMA:     Y_t = AR part + MA part
-ARIMA:    Δ^d Y_t = ARMA on differenced series
-SARIMA:   ARIMA(p,d,q)(P,D,Q)_m
-```
-
----
-
-### Visual Explanation
+### Working
 ```
 AR → past values → predict next
 MA → past errors → predict next
@@ -129,10 +118,3 @@ SARIMA → ARIMA + seasonal patterns (period m)
 - Model summary: coefficients, AIC/BIC
 ```
 
----
-
-### Next Steps
-```
-- Forecast beyond test period
-- Experiment with SARIMA or LSTM for better accuracy
-```
